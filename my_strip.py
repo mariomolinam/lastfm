@@ -16,8 +16,8 @@ def m1(myfile):
 
 
 data_2 = []
-def m2(myfile):
-    for item in data_1:
+def m2(mylist):
+    for item in mylist:
         data_2.append(json.loads(item))
 
 #def subset():
