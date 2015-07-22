@@ -12,7 +12,7 @@ def m1(myfile):
     data_json = open(myfile)
     
     for line in data_json:
-        data_1.append(json.loads(line))
+        data_1.append(line.strip())
     
     return data_1[0:5]
 
