@@ -1,5 +1,8 @@
 #program to split a json file exported from mongodb (with mongoexport)
 import json
+import os
+
+path1 = os.path.abspath('users.json')
 
 data_1 = []
 
@@ -9,10 +12,11 @@ def m1(myfile):
     
     returns the type of the first list's element
     """
+    
     data_json = open(myfile)
     
     for line in data_json:
-        data_1.append(line.strip())
+        data_1.append(json.loads(line))
     
     return data_1[0:5]
 
