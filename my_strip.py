@@ -36,7 +36,7 @@ def m2(mylist):
     
     for item in range0:
         for r in item:
-            string = json.loads(data_1[r])
+            string = json.loads(mylist[r])
             data_2.append(string)
     
     return data_2[0:10]
