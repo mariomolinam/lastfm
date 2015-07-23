@@ -2,32 +2,40 @@
 import json
 import os
 
-path1 = os.path.abspath('users.json')
+path1 = os.path.join('','users.json')
 
 data_1 = []
 
 def m1(myfile):
     """
     strips each line in the json file and append it into the list data_1.
-    
-    returns the type of the first list's element
+    returns the type of the list's first elements
     """
     
     data_json = open(myfile)
     
     for line in data_json:
-        data_1.append(json.loads(line))
+        data_1.append(line.strip())
     
     return data_1[0:5]
 
+
 data_2 = []
+range0 = [range(500000), range(500000, 1000000),
+         range(1000000, 1500000), range(1500000, 2000000),
+         range(2000000, 2500000), range(2500000, 3000000),
+         range(3000000, 3500000), range(3500000, 4000000),
+         range(4000000, 4500000), range(4500000, 4500000)]
+
 def m2(mylist):
     """
     take each element of mylist and load it as json.
     returns a list of json files.
     """
-    for item in mylist:
-        data_2.append(json.loads(item))
+    
+    for item in range0:
+        for r in item:
+            data_2.append(json.loads(data_1[r]))
     
     return data_2[0:10]
 
