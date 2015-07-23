@@ -21,7 +21,8 @@ def m1(myfile):
         if "US" in a:
             data_1.append(a)
     
-    return data_1[0:5]
+    return len(data_1)
+
 
 
 data_2 = []
