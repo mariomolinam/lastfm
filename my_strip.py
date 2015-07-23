@@ -25,7 +25,6 @@ def m1(myfile):
     return len(data_1)
 
 
-
 data_2 = []
 def m2(mylist):
     """
