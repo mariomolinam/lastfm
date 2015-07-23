@@ -28,24 +28,12 @@ data_2 = []
 def m2(mylist):
     """
     take each element of mylist and load it as json.
-    mylist is a list.
+    mylist is a list of strings.
     returns a list of json files.
     """
     
     for item in mylist:
         jsonfile = json.loads(item)
         data_2.append(jsonfile)
-        
-        #for r in item:
-        #    string = json.loads(mylist[r])
-        #    data_2.append(string)
     
     return data_2[0:5]
-
-#def subset():
-#    for item in data_3:
-#        if item['country']=='US':
-#            data.append(item)
-    
-#    return type(data[0])
-    
