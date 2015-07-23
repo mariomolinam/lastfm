@@ -9,7 +9,8 @@ data_1 = []
 
 def m1(myfile):
     """
-    strips each line in the json file and append it into the list data_1.
+    strips each line in myfile and append it in data_1.
+    myfile is a file.
     returns the type of the list's first elements
     """
     
@@ -31,13 +32,16 @@ range0 = [range(500000), range(500000, 1000000),
 def m2(mylist):
     """
     take each element of mylist and load it as json.
+    mylist is a list.
     returns a list of json files.
     """
     
-    for item in range0:
-        for r in item:
-            string = json.loads(mylist[r])
-            data_2.append(string)
+    for item in range(1000):
+        data_2.append(data_1[item])
+        
+        #for r in item:
+        #    string = json.loads(mylist[r])
+        #    data_2.append(string)
     
     return data_2[0:10]
 
