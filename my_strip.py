@@ -17,7 +17,9 @@ def m1(myfile):
     data_json = open(myfile)
     
     for line in data_json:
-        data_1.append(line.strip())
+        a = line.strip()
+        if "US" in a:
+            data_1.append(a)
     
     return data_1[0:5]
 
