@@ -22,36 +22,55 @@ def m1(myfile):
         if "US" in a:
             data_1.append(a)
     
+    data_json.close()
+    
     return len(data_1)
 
 
 data_2 = []
+
 def m2(mylist):
     """
-    take each element of mylist and load it as json.
+    take each element of mylist and select playcount and user_id.
+    returns a list of .
     mylist is a list of strings.
-    returns a list of json files.
     """
     
-    for item in mylist:
-        jsonfile = json.loads(item)
-        data_2.append(jsonfile)
+    for i in mylist:
+        n = i.index('"playcount":')
+        part = i[n:]
+        
+        s0 = part.find(':')
+        e0 = part.find(',')
+        number= part[s0+1:e0]
+        
+        s1 = part.find(':', e0+1)
+        e1 = part.find(',', e0+1)
+        user = part[s1+1:e1]
+        
+        data_2.append([user, number])
     
-    return data_2[0:5]
+    
+    return data_2[0:10]
 
 
 data_3 = []
-def m3(mydict):
+
+def m3(myfile):
+    """
+    myfile is a file.
+    strips each line in myfile and appends only US users in data_1.
+    returns the type of the list's first elements
     """
     
-    mydict is a list of dictionaries
-    """
-    for i in range(len(mydict)):
-        list0 = []
-        list0.append(item[i]['user_id'])
-        list0.append(item[i]['playcount'])
-        data_3.append(list_0)
+    data_json = open(myfile)
     
-    return data_3[0:5]
-        
+    for line in data_json:
+        a = line.strip()
+        part = a.find('"links":')
+        data_3.append(part)
+    
+    data_json.close()
+    
+    return len(data_3)  
     
