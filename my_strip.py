@@ -38,3 +38,20 @@ def m2(mylist):
         data_2.append(jsonfile)
     
     return data_2[0:5]
+
+
+data_3 = []
+def m3(mydict):
+    """
+    
+    mydict is a list of dictionaries
+    """
+    for i in range(len(mydict)):
+        list0 = []
+        list0.append(item[i]['user_id'])
+        list0.append(item[i]['playcount'])
+        data_3.append(list_0)
+    
+    return data_3[0:5]
+        
+    
