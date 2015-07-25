@@ -73,9 +73,9 @@ def m3(myfile):
     data_json.close()
     
     return len(data_3)  
+
     
 data_4 = []
-
 def m4(mylist):
     """
     take each element of mylist and select playcount and user_id.
