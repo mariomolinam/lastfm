@@ -82,6 +82,7 @@ def m4(mylist):
     """
     """
     str1 = ''.join(mylist)
+    
     names = []
     for i in range(len(data_2)):
         names.append(data_2[i][0])
@@ -91,8 +92,8 @@ def m4(mylist):
         user = str1.find(iden)
         n1 = str1.find('}', user)
         
-        if n1 > 10000:
-            part = str1[user-10000:n1]
+        if n1 > 20000:
+            part = str1[user-20000:n1]
         else:
             part = str1[:n1]
         
