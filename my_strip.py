@@ -101,8 +101,8 @@ def m4(mylist):
         
         for k in range(times):
             
-            num1 = str1.find(names[i], num0)
-            num2 = str1.find('}', num1)
+            num1 = str1.find(names[i], num0+1)
+            num2 = str1.find('}', num1+1)
             part = str1[:num2]
             num3 = part.rfind('"links":')
             str2 = part[num3:num2]
