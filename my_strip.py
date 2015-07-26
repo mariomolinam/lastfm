@@ -95,9 +95,9 @@ def m4(mylist):
         times = str1.count(names[i])
         num0 = 0
         
-        #this is for tracking
-        if i in track:
-            print i
+        #this is for tracking the process
+        #if i in track:
+        print i
         
         for k in range(times):
             
