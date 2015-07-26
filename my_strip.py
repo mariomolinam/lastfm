@@ -68,8 +68,8 @@ def m3(myfile):
     
     for line in data_json:
         a = line.strip()
-        part = a.find('"links":')
-        data_3.append(a[part:])
+        #part = a.find('"links":')
+        data_3.append(a)#[part:])
     
     data_json.close()
     
@@ -78,7 +78,35 @@ def m3(myfile):
     
 data_4 = []
 
+names = []
+for i in range(len(data_2)):
+    names.append(data_2[i][0])
+
 def m4(mylist):
+    """
+    """
+    str1 = ''.join(mylist)
+    
+    for i in names:
+        iden = '"user_id":' + names[i]
+        user = str1.find(iden)
+        n1 = str1.find('}', user)
+        
+        if n1 > 10000:
+            part = str1[user-10000:n1]
+        else:
+            part = str1[:n1]
+        
+        n0 = part.rfind('"links":')
+        
+        data_4.append(str1[n0:n1])
+        
+    return data_4[0:5]
+
+
+data_5 = []
+
+def m5(mylist):
     """
     
     mylist is a list of strings.
@@ -114,11 +142,11 @@ def m4(mylist):
             
             num0 = num1
                     
-    return data_4[0:10]
+    return data_5[0:10]
 
 
-data_5 = []
-def m5(mylist):
+data_6 = []
+def m6(mylist):
     """
     
     """
