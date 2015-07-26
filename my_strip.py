@@ -68,8 +68,8 @@ def m3(myfile):
     
     for line in data_json:
         a = line.strip()
-        #part = a.find('"links":')
-        data_3.append(a)#[part:])
+        part = a.find('"links":')
+        data_3.append(a[part:])
     
     data_json.close()
     
@@ -87,7 +87,7 @@ def m4(mylist):
     for i in range(len(data_2)):
         names.append(data_2[i][0])
     
-    for i in names:
+    for i in range(len(names)):
         iden = '"user_id":' + names[i]
         user = str1.find(iden)
         n1 = str1.find('}', user)
