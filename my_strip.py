@@ -78,14 +78,13 @@ def m3(myfile):
     
 data_4 = []
 
-names = []
-for i in range(len(data_2)):
-    names.append(data_2[i][0])
-
 def m4(mylist):
     """
     """
     str1 = ''.join(mylist)
+    names = []
+    for i in range(len(data_2)):
+        names.append(data_2[i][0])
     
     for i in names:
         iden = '"user_id":' + names[i]
