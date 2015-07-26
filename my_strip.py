@@ -90,10 +90,11 @@ def m4(mylist):
     for i in range(len(data_2)):
         names.append(data_2[i][0])
     
+    track = []
     for i in range(len(names)):
         times = str1.count(names[i])
         num0 = 0
-        
+        print i
         for k in range(times):
             
             num1 = str1.find(names[i], num0)
