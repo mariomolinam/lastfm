@@ -103,7 +103,10 @@ def m4(mylist):
             
             num1 = str1.find(names[i], num0+1)
             num2 = str1.find('}', num1+1)
-            part = str1[:num2]
+            if num2 > 10000:
+                part = str1[num1-10000:num2]
+            else:
+                part = str1[:num2]
             num3 = part.rfind('"links":')
             str2 = part[num3:num2]
             
