@@ -86,6 +86,7 @@ def m4(mylist):
     
     str1 = ''.join(mylist)
     names = []
+    track = range(0,700000, 100)
     
     for i in range(len(data_2)):
         names.append(data_2[i][0])
@@ -94,7 +95,11 @@ def m4(mylist):
     for i in range(len(names)):
         times = str1.count(names[i])
         num0 = 0
-        print i
+        
+        #this is for tracking
+        if i in track:
+            print i
+        
         for k in range(times):
             
             num1 = str1.find(names[i], num0)
