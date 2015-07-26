@@ -2,10 +2,9 @@
 import json
 import os
 
-mydata= ['/users.json', '/network.json']
-current = os.getcwd
-path1 = os.path.join(current, mydata[0])
-path2 = os.path.join(current, mydata[1])
+mydata= ['users.json', 'network.json']
+path1 = os.path.join('/home/ubuntu/lastfm/data', mydata[0])
+path2 = os.path.join('/home/ubuntu/lastfm/data', mydata[1])
 
 data_1 = []
 
