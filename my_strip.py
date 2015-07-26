@@ -2,9 +2,10 @@
 import json
 import os
 
-mydata= ['users.json', 'network.json']
-path1 = os.path.join('/home/ubuntu/lastfm/data',mydata[0])
-path2 = os.path.join('/home/ubuntu/lastfm/data',mydata[1])
+mydata= ['/users.json', '/network.json']
+current = os.getcwd
+path1 = os.path.join(current, mydata[0])
+path2 = os.path.join(current, mydata[1])
 
 data_1 = []
 
@@ -31,22 +32,23 @@ data_2 = []
 
 def m2(mylist):
     """
-    take each element of mylist and select playcount and user_id.
+    takes each element of mylist and select playcount and user_id.
     returns a list of .
     mylist is a list of strings.
     """
     
     for i in mylist:
-        n = i.index('"playcount":')
-        part = i[n:]
+        n0 = i.index('"playcount":')
+        part0 = i[n0:]
+        s0 = part0.find(':')
+        e0 = part0.find(',')
+        number = part0[s0+1:e0]
         
-        s0 = part.find(':')
-        e0 = part.find(',')
-        number = part[s0+1:e0]
-        
-        s1 = part.find(':', e0+1)
-        e1 = part.find(',', e0+1)
-        user = part[s1+1:e1]
+        n1 = i.index('"user_id":')
+        part1 = i[n1:]
+        s1 = part1.find(':')
+        e1 = part1.find('}')
+        user = part1[s1+1:e1]
         
         data_2.append([user, number])
     
@@ -76,26 +78,35 @@ def m3(myfile):
 
     
 data_4 = []
+
 def m4(mylist):
     """
-    take each element of mylist and select playcount and user_id.
-    returns a list of strings.
+    
     mylist is a list of strings.
     """
     
-    for i in mylist:
-        s0 = i.find('[')
-        e0 = i.find(']')
-        links0 = i[s0+1:e0]
-        
-        links1 = links0.split(',')
-        
-        s1 = i.find(':', e0+1)
-        e1 = i.find(',', e0+1)
-        user = i[s1+1:e1+1]
-        
-        data_4.append([user, links1])
+    str1 = ''.join(mylist)
+    names = []
     
+    for i in range(len(data_2)):
+        names.append(data_2[i][0])
+    
+    for i in range(len(names)):
+        times = str1.count(names[i])
+        num0 = 0
+        
+        for k in range(times):
+            
+            num1 = str1.find(names[i], num0)
+            num2 = str1.find('}', num1)
+            part = str1[:num2]
+            num3 = part.rfind('"links":')
+            str2 = part[num3:num2]
+            
+            data_4.append(str2)
+            
+            num0 = num1
+                    
     return data_4[0:10]
 
 
