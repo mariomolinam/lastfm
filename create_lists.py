@@ -37,6 +37,7 @@ def users_2(mylist):
     """
     mylist is list of strings created by the function users_1.
     selects playcount and user_id from mylist to data_2.
+    creates a file with data_2 named 'user_list.txt'
     returns the first 10 elements of data_2 .
     """
     
@@ -87,12 +88,13 @@ def network_2(mylist):
     #WARNING: this function may take up to 20 hours to select US users and their network.
     """
     mylist is the list created by the function network_1.
-    converts mylist into a string and seeks each US user in this string.
-    Then it appends user_id and lastfm friends to data_4.
+    it converts mylist into a string and seeks each US user in this string.
+    then it appends user_id and lastfm friends to data_4.
     data_4 contains symmetric friendship information for US users
     only(!). It does not collect friendships outside the United States,
     even though this information is available in data_3.
-    returns the first elements of data_4. 
+    it creates a file with data_4 named 'network_list.txt'
+    it returns the first elements of data_4. 
     """
     str1 = ''.join(mylist)
     
