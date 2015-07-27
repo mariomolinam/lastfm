@@ -53,7 +53,7 @@ def users_2(mylist):
         e1 = part1.find('}')
         user = '"user_id"' + part1[s1+1:e1]
         
-        data_2.append(user, number)
+        data_2.append(user + '; ' + number)
     
     fl = open('user_list.txt', 'w')
     for item in data_2:
