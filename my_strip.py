@@ -102,6 +102,9 @@ def m4(mylist):
         
         data_4.append(piece)
         
+        #tracker
+        print i
+        
     return data_4[0:5]
 
 
