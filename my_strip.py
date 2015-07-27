@@ -87,6 +87,7 @@ def m4(mylist):
     for i in range(len(data_2)):
         names.append(data_2[i][0])
     
+    track = range(0,700000, 200)
     for i in range(len(names)):
         iden = '"user_id":' + names[i]
         user = str1.find(iden)
@@ -103,7 +104,8 @@ def m4(mylist):
         data_4.append(piece)
         
         #tracker
-        print i
+        if i in track:
+            print i
         
     return data_4[0:5]
 
