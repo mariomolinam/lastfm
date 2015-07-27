@@ -7,10 +7,12 @@ mydata= ['users.json', 'network.json']
 path1 = os.path.join('/home/ubuntu/lastfm/data', mydata[0])
 path2 = os.path.join('/home/ubuntu/lastfm/data', mydata[1])
 
+
 data_1 = []
 data_2 = []
 data_3 = []
 data_4 = []
+
 
 def users_1(myfile):
     """
