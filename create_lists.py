@@ -22,7 +22,7 @@ def users_1(myfile):
     data_json = open(myfile)
     
     for line in data_json:
-        a = line.strip() #this 
+        a = line.strip()
         if "US" in a: #this appends only US users.
             data_1.append(a)
     
@@ -43,15 +43,15 @@ def users_2(mylist):
         part0 = i[n0:]
         s0 = part0.find(':')
         e0 = part0.find(',')
-        number = part0[s0+1:e0]
+        number = '"playcount":' + part0[s0+1:e0]
         
         n1 = i.index('"user_id":')
         part1 = i[n1:]
         s1 = part1.find(':')
         e1 = part1.find('}')
-        user = part1[s1+1:e1]
+        user = '"user_id"' + part1[s1+1:e1]
         
-        data_2.append([user, number])
+        data_2.append(user, number)
     
     fl = open('user_list.txt', 'w')
     for item in data_2:
@@ -82,10 +82,14 @@ def network_1(myfile):
 
 
 def network_2(mylist):
+    #WARNING: this function may take up to 20 hours to select US users and their network.
     """
     mylist is the list created by the function network_1.
     converts mylist into a string and seeks each US user in this string.
     Then it appends user_id and lastfm friends to data_4.
+    data_4 contains symmetric friendship information for US users
+    only(!). It does not collect friendships outside the United States,
+    even though this information is available in data_3.
     returns the first elements of data_4. 
     """
     str1 = ''.join(mylist)
