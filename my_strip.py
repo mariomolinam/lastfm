@@ -98,8 +98,9 @@ def m4(mylist):
             part = str1[:n1]
         
         n0 = part.rfind('"links":')
+        piece = part[n0:n1]
         
-        data_4.append(str1[n0:n1])
+        data_4.append(piece)
         
     return data_4[0:5]
 
