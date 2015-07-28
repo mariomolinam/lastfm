@@ -50,6 +50,12 @@ def edge_names(net_list):
         for p in pieces:
             edge.append([user, p])
     
+    #creates a file named "edgelist_users.txt"
+    fl = open('edgelist_users.txt', 'w')
+    for item in edge:
+        fl.write(item + '\n')
+    fl.close()
+    
     return edge[0:2]
     
     
