@@ -17,6 +17,7 @@ f2.close()
 ids = []
 def add_id(user_list):
     """
+    user_list is the list user from above
     this creates an id for each user_id in the list user
     it returns a list of lists with an id (int) and user_id. 
     """
@@ -31,8 +32,9 @@ def add_id(user_list):
     return ids[0:10]
 
 edge = []
-def edgelist(net_list):
+def edge_names(net_list):
     """
+    net_list is the list network from above
     """
     for item in net_list:
         n0 = item.find('[', 1)
@@ -51,5 +53,8 @@ def edgelist(net_list):
     return edge[0:2]
     
     
-        
+def edge_num(edge_list):
+    """
+    """
+    pass
     
