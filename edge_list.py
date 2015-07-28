@@ -30,8 +30,8 @@ def add_id(user_list):
     
     return ids[0:10]
 
-network_list = []
-def edgelist(net_list):
+edge = []
+def edgelist(network_list):
     """
     """
     for item in net_list:
@@ -44,9 +44,11 @@ def edgelist(net_list):
         n2 = part1.find(':')
         user = part1[n2+1:]
         
-        network_list.append([user, links.split(',')])
-        
-    return network_list[0:5]
+        pieces = links.split(',')
+        for i in chunks:
+            edge.append([user, pieces])
+    
+    return network_list[0:2]
     
     
         
