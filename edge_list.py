@@ -15,26 +15,26 @@ f2.close()
 
 #
 ids = []
-def add_id(user):
+def add_id(user_list):
     """
     this creates an id for each user_id in the list user
     it returns a list of lists with an id (int) and user_id. 
     """
     #user is already created at the beginning of this file.
-    for i in range(len(user)):
-        n0 = user[i].find(':')
-        n1 = user[i].find(';')
-        part = user[i][n0+2:n1-1]
+    for i in range(len(user_list)):
+        n0 = user_list[i].find(':')
+        n1 = user_list[i].find(';')
+        part = user_list[i][n0+2:n1-1]
         
         ids.append([i, part])
     
     return ids[0:10]
 
 network_list = []
-def edgelist(network):
+def edgelist(net_list):
     """
     """
-    for item in network:
+    for item in net_list:
         n0 = item.find('[', 1)
         part0 = item[n0+1:]
         n1 = part0.find(']')
@@ -46,7 +46,7 @@ def edgelist(network):
         
         network_list.append([users, links.split(',')])
         
-
+    return network_list[0:5]
     
     
         
