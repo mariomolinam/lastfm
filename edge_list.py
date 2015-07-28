@@ -44,7 +44,7 @@ def edgelist(net_list):
         n2 = part1.find(':')
         user = part1[n2+1:]
         
-        network_list.append([users, links.split(',')])
+        network_list.append([user, links.split(',')])
         
     return network_list[0:5]
     
