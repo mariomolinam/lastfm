@@ -13,14 +13,12 @@ for item in f2:
     network.append(item.strip('\n'))
 f2.close()
 
-
+ids = []
 def add_id(mylist):
     """
     this creates an id for each user_id in the list user
     it returns a list of lists with an id (int) and user_id. 
     """
-    
-    ids = []
     
     for i in range(len(mylist)):
         n0 = mylist[i].find(':')
