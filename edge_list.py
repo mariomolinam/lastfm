@@ -48,7 +48,7 @@ def edge_names(net_list):
         
         pieces = links.split(',')
         for p in pieces:
-            edge.append([user, p])
+            edge.append((user, p))
     
     #creates a file named "edgelist_users.txt"
     fl = open('edgelist_users.txt', 'w')
