@@ -45,10 +45,10 @@ def edgelist(net_list):
         user = part1[n2+1:]
         
         pieces = links.split(',')
-        for i in chunks:
-            edge.append([user, pieces])
+        for p in pieces:
+            edge.append([user, p])
     
-    return network_list[0:2]
+    return edge[0:2]
     
     
         
