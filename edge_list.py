@@ -31,7 +31,7 @@ def add_id(user_list):
     return ids[0:10]
 
 edge = []
-def edgelist(network_list):
+def edgelist(net_list):
     """
     """
     for item in net_list:
