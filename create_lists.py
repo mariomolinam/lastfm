@@ -52,7 +52,7 @@ def users_2(mylist):
         part1 = i[n1:]
         s1 = part1.find(':')
         e1 = part1.find('}')
-        user = '"user_id"' + part1[s1+1:e1]
+        user = '"user_id":' + part1[s1+1:e1]
         
         data_2.append(user + '; ' + number)
     
